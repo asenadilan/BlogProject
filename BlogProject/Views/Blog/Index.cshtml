@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Oluşturulma Tarihi</th>
+                <th scope="col">Aksiyon</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var blog in @ViewBag.blogs)
+            {
+            <tr>
+                <th scope="row">@blog.BlogId</th>
+                <td>@blog.BlogTitle</td>
+                <td>@blog.BlogContent</td>
+                <td>@blog.BlogCreateDate</td>
+                <td> <a href="/Blog/Detail/@blog.BlogId" class="btn btn-primary read-m">Detay</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+      
+}
